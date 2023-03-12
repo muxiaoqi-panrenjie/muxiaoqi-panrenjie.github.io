@@ -15,15 +15,15 @@
 <meta property="og:site_name" content="潘先生的个人博客">
 <meta property="og:description" content="Vue3项目构建的基本配置:Prettier + Eslint 代码格式化工具editorconfig统一开发格式可以去github上搜寻.editorconfig统一格式，然后在自己的项目中新建.editorconfig文件，并配置相关代码">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/1.jpg">
-<meta property="og:image" content="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/2.jpg">
-<meta property="og:image" content="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/3.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/3.jpg">
 <meta property="article:published_time" content="2023-03-12T08:59:45.000Z">
-<meta property="article:modified_time" content="2023-03-12T16:16:27.195Z">
+<meta property="article:modified_time" content="2023-03-12T16:36:23.717Z">
 <meta property="article:author" content="Mr Pan">
 <meta property="article:tag" content="Vue3">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/1.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="潘先生的个人博客" type="application/atom+xml">
   
@@ -97,39 +97,6 @@
 		</nav>
 	</header>
 </div>
-<!--时钟-->
-<br>
-<div style="position:absolute; bottom:120px left:auto; width:100%;height:50%">
-	<script type="text/javascript" src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
-  	<div id="clock" style="font-family: 'Share Tech Mono', monospace;color: #ffffff;text-align: center;position: absolute;left: 50%;top: 50%;-webkit-transform: translate(50%, 50%);transform: translate(-50%, -50%);color: #4B8CE1;text-shadow: 0 0 20px #0aafe6, 0 0 20px rgba(10, 175, 230, 0);">
-      		<p style="margin: 0;padding: 0;letter-spacing: 0.1em;font-size: 15px;">{{ date }}</p>
-      		<p style="margin: 0;padding: 0;letter-spacing: 0.01em;font-size: 38px;">{{ time }}</p>
-  	</div>
-	<script>
-		var clock = new Vue({
-			el: '#clock',
-			data: {
-				time: '',
-				date: ''
-			}
-		});
-
-		var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-		var timerID = setInterval(updateTime, 1000);
-		updateTime();
-		function updateTime() {
-			var cd = new Date();
-			clock.time = zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2);
-			clock.date = zeroPadding(cd.getFullYear(), 4) + '-' + zeroPadding(cd.getMonth() + 1, 2) + '-' + zeroPadding(cd.getDate(), 2) + week[cd.getDay()];
-		};
-
-		function zeroPadding(num, digit) {
-			var zero = '';
-			for (var i = 0; i < digit; i++) {
-				zero += '0';
-			}
-			return (zero + num).slice(-digit);
-		}
 	</script>
 </div>
 
@@ -257,12 +224,12 @@ trim_trailing_whitespace = false
 
 /public/*
 </code></pre>
-<p>4.如果使vscode请安装<br><img src="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/1.jpg"><br>&emsp;&emsp;如果直接使用的话，prettier和eslint会有冲突，我们可以安装另外两个来使他们兼容，并且按照prettier的代码格式。<br><code>npm install eslint-plugin-prettier -D</code><br><code>npm install eslint-config-prettier -D</code><br>5.并且在.eslintrc.js的文件里的extends属性里最后一行添加配置，这样就能覆盖掉前面的配置，并且能够兼容prettier的代码格式</p>
+<p>4.如果使vscode请安装<br><img src="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/1.jpg"><br>&emsp;&emsp;如果直接使用的话，prettier和eslint会有冲突，我们可以安装另外两个来使他们兼容，并且按照prettier的代码格式。<br><code>npm install eslint-plugin-prettier -D</code><br><code>npm install eslint-config-prettier -D</code><br>5.并且在.eslintrc.js的文件里的extends属性里最后一行添加配置，这样就能覆盖掉前面的配置，并且能够兼容prettier的代码格式</p>
 <pre><code>extends: [
     &quot;plugin:prettier/recommended&quot;
   ],
 </code></pre>
-<h3 id="Commitizen是一个帮助我们编写规范commit-message的工具"><a href="#Commitizen是一个帮助我们编写规范commit-message的工具" class="headerlink" title="Commitizen是一个帮助我们编写规范commit message的工具"></a>Commitizen是一个帮助我们编写规范commit message的工具</h3><p>1.安装Commitizen<br><code>npm i commitizen -D</code><br>2.安装cz-conventional-changelog并且初始化cz-conventional-changelog:<br><code>npx commitizen init cz-conventional-changelog --save-dev --save-exact</code><br>会自动在pack.json文件中配置<br><img src="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/2.jpg"><br>全局安装使用 npx cz 来代替 git commit<br><img src="http://https//github.com/muxiaoqi-panrenjie/Images/tree/master/BlogImages/2023.3.12/3.jpg"></p>
+<h3 id="Commitizen是一个帮助我们编写规范commit-message的工具"><a href="#Commitizen是一个帮助我们编写规范commit-message的工具" class="headerlink" title="Commitizen是一个帮助我们编写规范commit message的工具"></a>Commitizen是一个帮助我们编写规范commit message的工具</h3><p>1.安装Commitizen<br><code>npm i commitizen -D</code><br>2.安装cz-conventional-changelog并且初始化cz-conventional-changelog:<br><code>npx commitizen init cz-conventional-changelog --save-dev --save-exact</code><br>会自动在pack.json文件中配置<br><img src="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/2.jpg"><br>全局安装使用 npx cz 来代替 git commit<br><img src="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/3.jpg"></p>
 <h3 id="代码提交验证"><a href="#代码提交验证" class="headerlink" title="代码提交验证"></a>代码提交验证</h3><p>1.commitlint: 安装，制定提交规范（采用默认）<br><code>npm install --save-dev @commitlint/config-conventional @commitlint/cli</code><br>2.新建commit.config.js并配置</p>
 <pre><code>module.exports = &#123;
   extends: [&#39;@commitlint/config-conventional&#39;]
@@ -410,6 +377,17 @@ config.resolve.alias = &#123;
   
 
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://example.com/2023/03/12/2023.3.12/", 
+    sourceId: "2023.3.12",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -428,7 +406,8 @@ config.resolve.alias = &#123;
     		&copy; 2023 Mr Pan
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+          Welcome to learn together<a href="https://github.com/muxiaoqi-panrenjie" target="_blank">
+          Mr Pan
       	</div>
     </div>
   </div>
@@ -455,7 +434,7 @@ config.resolve.alias = &#123;
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false,
+		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
@@ -578,27 +557,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://github.com/muxiaoqi-panrenjie" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://github.com/muxiaoqi-panrenjie" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="https://github.com/muxiaoqi-panrenjie" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
+              <a href="https://github.com/muxiaoqi-panrenjie" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
+              <a href="https://github.com/muxiaoqi-panrenjie" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://github.com/muxiaoqi-panrenjie" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
             </li>
           
         </ul>
