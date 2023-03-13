@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Category: js数据结构 | 潘先生的个人博客</title>
+  <title>Vue3项目构建的基本配置 | 潘先生的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="潘先生的个人博客">
-<meta property="og:url" content="http://example.com/categories/js%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+  <meta name="description" content="Vue3项目构建的基本配置:Prettier + Eslint 代码格式化工具editorconfig统一开发格式可以去github上搜寻.editorconfig统一格式，然后在自己的项目中新建.editorconfig文件，并配置相关代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3项目构建的基本配置">
+<meta property="og:url" content="http://example.com/2023/03/12/Prettier%20+%20Eslint%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="潘先生的个人博客">
+<meta property="og:description" content="Vue3项目构建的基本配置:Prettier + Eslint 代码格式化工具editorconfig统一开发格式可以去github上搜寻.editorconfig统一格式，然后在自己的项目中新建.editorconfig文件，并配置相关代码">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/1.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/2.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/3.jpg">
+<meta property="article:published_time" content="2023-03-12T08:59:45.000Z">
+<meta property="article:modified_time" content="2023-03-12T16:36:23.717Z">
 <meta property="article:author" content="Mr Pan">
+<meta property="article:tag" content="Vue3">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="潘先生的个人博客" type="application/atom+xml">
   
@@ -149,71 +158,242 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Prettier + Eslint 代码格式化工具" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/12/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="archive-article-date">
-  	<time datetime="2023-03-12T07:59:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/12/js%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">js数据结构</a>
+    <h1 class="article-title" itemprop="name">
+      Vue3项目构建的基本配置
     </h1>
   
 
-        <div class="article-info info-on-right">
+        
+        <a href="/2023/03/12/Prettier%20+%20Eslint%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B7%A5%E5%85%B7/" class="archive-article-date">
+  	<time datetime="2023-03-12T08:59:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+
           
+            <h2 id="Vue3项目构建的基本配置-Prettier-Eslint-代码格式化工具"><a href="#Vue3项目构建的基本配置-Prettier-Eslint-代码格式化工具" class="headerlink" title="Vue3项目构建的基本配置:Prettier + Eslint 代码格式化工具"></a>Vue3项目构建的基本配置:Prettier + Eslint 代码格式化工具</h2><h4 id="editorconfig统一开发格式"><a href="#editorconfig统一开发格式" class="headerlink" title="editorconfig统一开发格式"></a>editorconfig统一开发格式</h4><p>可以去github上搜寻.editorconfig统一格式，然后在自己的项目中新建.editorconfig文件，并配置相关代码</p>
+<span id="more"></span>
+
+<pre><code>[*.&#123;js,jsx,ts,tsx,vue&#125;]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+insert_final_newline = true
+# https://editorconfig.org    
+root = true
+
+[*]
+charset = utf-8
+indent_style = space # 缩进风格(tab | space)
+indent_size = 2 # 缩进大小
+end_of_line = lf # 控制换行类型(if | cr | crlf)
+insert_final_newline = true # 去除行首的任意空白字符
+trim_trailing_whitespace = true # 始终在文件末尾插入一个新行
+
+[*.md]
+insert_final_newline = z
+trim_trailing_whitespace = false
+</code></pre>
+<h4 id="开发时依赖-代码格式化工具-prettier"><a href="#开发时依赖-代码格式化工具-prettier" class="headerlink" title="开发时依赖 代码格式化工具 prettier"></a>开发时依赖 代码格式化工具 prettier</h4><p>1.安装 prettier 和 eslint 并且将他们两个兼容起来<br>2.安装prettier<br><code>npm install prettier -D</code><br>3.新建.prettierrc文件来配置文件</p>
+<pre><code>&#123;
+  &quot;useTabs&quot;: false,
+  &quot;tabWidth&quot;: 2,
+  &quot;printWidth&quot;: 80,
+  &quot;singleQuote&quot;: false,
+  &quot;trailingComma&quot;: &quot;none&quot;,
+  &quot;semi&quot;: true
+&#125;
+</code></pre>
+<p>4.新建.prettierignore文件来忽视不需要代码格式化的文件</p>
+<pre><code>/dist/*
+.local
+.output.js
+/node_modules/**
+
+**/*.svg
+**/*.sh
+
+/public/*
+</code></pre>
+<p>4.如果使vscode请安装<br><img src="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/1.jpg"><br>&emsp;&emsp;如果直接使用的话，prettier和eslint会有冲突，我们可以安装另外两个来使他们兼容，并且按照prettier的代码格式。<br><code>npm install eslint-plugin-prettier -D</code><br><code>npm install eslint-config-prettier -D</code><br>5.并且在.eslintrc.js的文件里的extends属性里最后一行添加配置，这样就能覆盖掉前面的配置，并且能够兼容prettier的代码格式</p>
+<pre><code>extends: [
+    &quot;plugin:prettier/recommended&quot;
+  ],
+</code></pre>
+<h3 id="Commitizen是一个帮助我们编写规范commit-message的工具"><a href="#Commitizen是一个帮助我们编写规范commit-message的工具" class="headerlink" title="Commitizen是一个帮助我们编写规范commit message的工具"></a>Commitizen是一个帮助我们编写规范commit message的工具</h3><p>1.安装Commitizen<br><code>npm i commitizen -D</code><br>2.安装cz-conventional-changelog并且初始化cz-conventional-changelog:<br><code>npx commitizen init cz-conventional-changelog --save-dev --save-exact</code><br>会自动在pack.json文件中配置<br><img src="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/2.jpg"><br>全局安装使用 npx cz 来代替 git commit<br><img src="https://raw.githubusercontent.com/muxiaoqi-panrenjie/Images/master/BlogImages/2023.3.12/3.jpg"></p>
+<h3 id="代码提交验证"><a href="#代码提交验证" class="headerlink" title="代码提交验证"></a>代码提交验证</h3><p>1.commitlint: 安装，制定提交规范（采用默认）<br><code>npm install --save-dev @commitlint/config-conventional @commitlint/cli</code><br>2.新建commit.config.js并配置</p>
+<pre><code>module.exports = &#123;
+  extends: [&#39;@commitlint/config-conventional&#39;]
+&#125;
+</code></pre>
+<p>3.使用husky<br><code>npx husky add .husky/commit-msg &quot;npx --no-install commitlint --edit $1&quot;</code></p>
+<h3 id="vue-config-js-基本配置"><a href="#vue-config-js-基本配置" class="headerlink" title="vue.config.js 基本配置"></a>vue.config.js 基本配置</h3><p>vue.config.js 是vue-cli的配置文件，而vue-cli是有webpack构建<br>所以可以进行相关的配置<br>1.配置方式一</p>
+<pre><code>outputDir:&#39;./build&#39;,
+  configureWebpack: &#123;
+    resolve: &#123;
+      alias: &#123;
+        components: &#39;@/component&#39;,
+      &#125;
+    &#125;
+  &#125;
+</code></pre>
+<p>2.配置方式二</p>
+<pre><code>configureWebpack: (config) =&gt; &#123;
+config.resolve.alias = &#123;
+  &#39;@&#39;:path.resolve(__dirname,&#39;src&#39;),
+  components:&#39;@/components&#39;
+&#125;
+</code></pre>
+<p>  }</p>
+
+          
+        
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">js数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Vue3</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/js数据结构//" class="article-tag-list-link color2">js数据结构</a>
+        			<a href="/categories/Vue3//" class="article-tag-list-link color5">Vue3</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/12/Prettier%20+%20Eslint%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B7%A5%E5%85%B7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2023/03/12/%E6%B5%85%E6%B5%85%E8%B0%88%E4%B8%80%E4%B8%8B%E5%AF%B9CommonJS%E3%80%81AMD%E3%80%81CMD%E3%80%81ES%20Module%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浅浅谈一下对CommonJS、AMD、CMD、ES Module的理解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://example.com/2023/03/12/Prettier%20+%20Eslint%20%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B7%A5%E5%85%B7/", 
+    sourceId: "Prettier + Eslint 代码格式化工具",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -250,10 +430,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
@@ -325,7 +505,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">js数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">前端面试题</a>
               </li>
             
             <div class="clearfix"></div>
